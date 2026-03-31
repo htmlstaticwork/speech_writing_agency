@@ -7,6 +7,7 @@
   <title>Orito | Engagements & Retainers</title>
   <meta name="description" content="Pricing and retainer structures for Orito speechwriting services." />
   <link rel="stylesheet" href="assets/css/style.css" />
+
 </head>
 
 <body>
@@ -59,18 +60,19 @@
   </div>
 
   <!-- HEADER -->
-  <section class="section" style="padding-top: 180px; text-align: center; background-color: var(--color-bg-alt);">
-    <div class="container reveal">
-      <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Investment</h1>
-      <p style="font-size: 1.25rem; color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">Transparent
-        engagement structures for world-class rhetorical architecture.</p>
+  <section class="hero"
+    style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80'); min-height: 60vh;">
+    <div class="container hero-content" style="text-align: center; margin: 0 auto;">
+      <h1 class="hero-anim d1" style="font-size: 3.5rem;">Investment</h1>
+      <p class="hero-anim d2" style="font-size: 1.25rem; max-width: 600px; margin: 0 auto;">Transparent engagement
+        structures for world-class rhetorical architecture.</p>
     </div>
   </section>
 
   <!-- PRICING CARDS -->
   <section class="section reveal">
     <div class="container">
-      <div class="card-grid">
+      <div class="card-grid pricing-grid">
 
         <!-- Essentials -->
         <div class="card pricing-card">
@@ -126,7 +128,16 @@
       </div>
     </div>
   </section>
+  <style>
+    .pricing-card {
+      display: flex;
+      flex-direction: column;
+    }
 
+    .pricing-card .card-btn {
+      margin-top: auto !important;
+    }
+  </style>
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
