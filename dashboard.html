@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,41 +9,99 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <!-- Chart.js for data visualization -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    @media (min-width: 769px) {
+      .dash-sidebar-toggle {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar-header .dash-sidebar-toggle {
+        display: flex !important;
+      }
+    }
+    @media (max-width: 360px) {
+      .editor-header-flex {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <div class="dashboard-layout">
-    
+
     <!-- SIDEBAR -->
     <aside class="dashboard-sidebar">
       <div class="sidebar-header" style="display: flex; justify-content: space-between; align-items: center;">
         <a href="index.html" class="logo" style="font-size: 1.5rem;">Orito</a>
         <button class="dash-sidebar-toggle icon-btn d-md-none" aria-label="Close menu" style="display: none;">✕</button>
       </div>
-      
+
       <nav class="sidebar-nav">
         <!-- EXACTLY 4 PAGES IN SIDEBAR AS SPECIFIED -->
         <a href="#" class="sidebar-link active" data-target="page-overview">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
           Overview
         </a>
         <a href="#" class="sidebar-link" data-target="page-speeches">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
           My Speeches
         </a>
         <a href="#" class="sidebar-link" data-target="page-editor">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+          </svg>
           Draft Editor
         </a>
         <a href="#" class="sidebar-link" data-target="page-settings">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+            </path>
+          </svg>
           Settings
         </a>
       </nav>
-      
+
       <div style="padding: 1.5rem; margin-top: auto; border-top: 1px solid var(--color-border);">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">
+            SM
+          </div>
+          <div style="overflow: hidden;">
+            <div style="font-weight: 600; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Senator S. Marshall</div>
+            <div style="color: var(--color-text-muted); font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">s.marshall@senate.gov</div>
+          </div>
+        </div>
         <a href="login.html" class="sidebar-link" style="padding: 0.5rem 0;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
           Log Out
         </a>
       </div>
@@ -50,25 +109,27 @@
 
     <!-- MAIN CONTENT -->
     <main class="dashboard-main">
-      
+
       <!-- Dashboard Header -->
       <header class="dashboard-header">
         <div style="display: flex; align-items: center; gap: 1rem;">
           <button class="dash-sidebar-toggle icon-btn" aria-label="Menu">☰</button>
-          <h2 style="font-size: 1.25rem;">Welcome back, Senator</h2>
+
         </div>
         <div style="display: flex; align-items: center; gap: 1rem;">
-          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">RTL</button>
-          <button class="icon-btn theme-toggle" aria-label="Toggle Theme">🌙</button>
+
           <div style="position: relative;">
+
             <button class="icon-btn" aria-label="Notifications">
               🔔
-              <span style="position: absolute; top: 0; right: 0; background: var(--color-error); width: 10px; height: 10px; border-radius: 50%;"></span>
+              <span
+                style="position: absolute; top: 0; right: 0; background: var(--color-error); width: 10px; height: 10px; border-radius: 50%;"></span>
             </button>
           </div>
-          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-weight: 700;">
-            SM
-          </div>
+          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">RTL</button>
+          <button class="icon-btn theme-toggle" aria-label="Toggle Theme">🌙</button>
+
+
         </div>
       </header>
 
@@ -79,8 +140,17 @@
         <!-- PAGE 1: OVERVIEW -->
         <!-- ============================================== -->
         <div id="page-overview" class="dashboard-page active">
-          
-          <!-- Sec 1: KPI Cards -->
+
+          <!-- Sec 1: Welcome Banner -->
+          <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: var(--radius); padding: 2rem; color: #FFF; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; position: relative; box-shadow: var(--shadow-md);">
+            <div style="position: relative; z-index: 2;">
+              <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: #FFF;">Welcome back, Senator Marshall!</h2>
+              <p style="opacity: 0.9; margin: 0; font-size: 0.95rem;">You have 2 pending revisions to review today. Let's make every word count.</p>
+            </div>
+            <div style="font-size: 8rem; position: absolute; right: -1rem; bottom: -3rem; opacity: 0.15; transform: rotate(-15deg); z-index: 1; pointer-events: none;">🎤</div>
+          </div>
+
+          <!-- Sec 2: KPI Cards -->
           <div class="kpi-grid">
             <div class="kpi-card">
               <div class="kpi-icon">📝</div>
@@ -116,19 +186,23 @@
           <div class="dash-panel">
             <h3>Recent Activity</h3>
             <div style="display: flex; flex-direction: column; gap: 1rem;">
-              <div style="display: flex; gap: 1rem; align-items: flex-start; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+              <div
+                style="display: flex; gap: 1rem; align-items: flex-start; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
                 <div style="color: var(--color-secondary); font-size: 1.5rem;">✍️</div>
                 <div>
                   <h4 style="font-size: 1rem;">V3 Draft Uploaded</h4>
-                  <p style="color: var(--color-text-muted); font-size: 0.9rem;">Senior writer updated "Economic Forum Keynote" — adjusted opening cadence.</p>
+                  <p style="color: var(--color-text-muted); font-size: 0.9rem;">Senior writer updated "Economic Forum
+                    Keynote" — adjusted opening cadence.</p>
                   <span style="font-size: 0.8rem; color: var(--color-text-muted);">2 hours ago</span>
                 </div>
               </div>
-              <div style="display: flex; gap: 1rem; align-items: flex-start; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+              <div
+                style="display: flex; gap: 1rem; align-items: flex-start; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
                 <div style="color: var(--color-success); font-size: 1.5rem;">✅</div>
                 <div>
                   <h4 style="font-size: 1rem;">Draft Approved</h4>
-                  <p style="color: var(--color-text-muted); font-size: 0.9rem;">You approved the final version of "Town Hall Remarks".</p>
+                  <p style="color: var(--color-text-muted); font-size: 0.9rem;">You approved the final version of "Town
+                    Hall Remarks".</p>
                   <span style="font-size: 0.8rem; color: var(--color-text-muted);">Yesterday</span>
                 </div>
               </div>
@@ -136,7 +210,8 @@
                 <div style="color: var(--color-warning); font-size: 1.5rem;">⏰</div>
                 <div>
                   <h4 style="font-size: 1rem;">Feedback Required</h4>
-                  <p style="color: var(--color-text-muted); font-size: 0.9rem;">Please review section 2 of "Campaign Launch Script".</p>
+                  <p style="color: var(--color-text-muted); font-size: 0.9rem;">Please review section 2 of "Campaign
+                    Launch Script".</p>
                   <span style="font-size: 0.8rem; color: var(--color-text-muted);">2 days ago</span>
                 </div>
               </div>
@@ -159,17 +234,21 @@
         <!-- PAGE 2: MY SPEECHES -->
         <!-- ============================================== -->
         <div id="page-speeches" class="dashboard-page">
-          
+
           <!-- Sec 1: Filter & Search Bar -->
-          <div class="dash-panel" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div class="dash-panel"
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <div style="display: flex; gap: 0.5rem;">
               <button class="btn btn-primary" style="padding: 0.5rem 1rem;">All</button>
-              <button class="btn" style="padding: 0.5rem 1rem; background: var(--color-bg); border: 1px solid var(--color-border);">Active</button>
-              <button class="btn" style="padding: 0.5rem 1rem; background: var(--color-bg); border: 1px solid var(--color-border);">Completed</button>
+              <button class="btn"
+                style="padding: 0.5rem 1rem; background: var(--color-bg); border: 1px solid var(--color-border);">Active</button>
+              <button class="btn"
+                style="padding: 0.5rem 1rem; background: var(--color-bg); border: 1px solid var(--color-border);">Completed</button>
             </div>
             <div style="display: flex; gap: 0.5rem;">
-              <input type="text" class="form-control" placeholder="Search outlines..." style="width: 250px; padding: 0.5rem 1rem;" />
-              <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Filter</button>
+              <input type="text" class="form-control" placeholder="Search outlines..."
+                style="width: 250px; padding: 0.5rem 1rem;" />
+
             </div>
           </div>
 
@@ -182,46 +261,80 @@
           </div>
 
           <!-- Sec 3: Speeches Table -->
-          <div class="dash-panel" style="overflow-x: auto;">
+          <div class="dash-panel">
             <h3>Speech Portfolio</h3>
-            <table class="dash-table">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Type</th>
-                  <th>Status</th>
-                  <th>Deadline</th>
-                  <th>Last Updated</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="font-weight: 600;">Global Economic Forum Keynote</td>
-                  <td>Corporate</td>
-                  <td><span style="background: var(--color-warning); color: #000; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">In Review</span></td>
-                  <td>Oct 15, 2026</td>
-                  <td>2 hours ago</td>
-                  <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.85rem;">Open Draft</button></td>
-                </tr>
-                <tr>
-                  <td style="font-weight: 600;">Campaign Kickoff Address</td>
-                  <td>Political</td>
-                  <td><span style="background: var(--color-bg); border: 1px solid var(--color-border); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Draft</span></td>
-                  <td>Nov 02, 2026</td>
-                  <td>Yesterday</td>
-                  <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.85rem;">Open Draft</button></td>
-                </tr>
-                <tr>
-                  <td style="font-weight: 600;">University Commencement</td>
-                  <td>Ceremonial</td>
-                  <td><span style="background: var(--color-success); color: #FFF; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Approved</span></td>
-                  <td>May 20, 2026</td>
-                  <td>4 days ago</td>
-                  <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.85rem;">View Final</button></td>
-                </tr>
-              </tbody>
-            </table>
+            <style>
+              .table-wrapper-responsive {
+                overflow-x: auto;
+                width: 100%;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 0.5rem;
+              }
+
+              .table-wrapper-responsive::-webkit-scrollbar {
+                height: 8px;
+                display: block;
+              }
+
+              .table-wrapper-responsive::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, 0.05);
+                border-radius: 4px;
+              }
+
+              .table-wrapper-responsive::-webkit-scrollbar-thumb {
+                background: var(--color-secondary);
+                border-radius: 4px;
+              }
+            </style>
+            <div class="table-wrapper-responsive">
+              <table class="dash-table" style="white-space: nowrap; min-width: 800px;">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Deadline</th>
+                    <th>Last Updated</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight: 600;">Global Economic Forum Keynote</td>
+                    <td>Corporate</td>
+                    <td><span
+                        style="background: var(--color-warning); color: #000; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">In
+                        Review</span></td>
+                    <td>Oct 15, 2026</td>
+                    <td>2 hours ago</td>
+                    <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.85rem;">Open
+                        Draft</button></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">Campaign Kickoff Address</td>
+                    <td>Political</td>
+                    <td><span
+                        style="background: var(--color-bg); border: 1px solid var(--color-border); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Draft</span>
+                    </td>
+                    <td>Nov 02, 2026</td>
+                    <td>Yesterday</td>
+                    <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.85rem;">Open
+                        Draft</button></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">University Commencement</td>
+                    <td>Ceremonial</td>
+                    <td><span
+                        style="background: var(--color-success); color: #FFF; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Approved</span>
+                    </td>
+                    <td>May 20, 2026</td>
+                    <td>4 days ago</td>
+                    <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.85rem;">View
+                        Final</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
         </div>
@@ -230,11 +343,12 @@
         <!-- PAGE 3: DRAFT EDITOR -->
         <!-- ============================================== -->
         <div id="page-editor" class="dashboard-page">
-          
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+
+          <div class="editor-header-flex" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
             <div>
-              <h2 style="font-size: 1.5rem; margin-bottom: 0.25rem;">Global Economic Forum Keynote</h2>
-              <p style="color: var(--color-text-muted); font-size: 0.9rem;">Status: <span style="font-weight: 700; color: var(--color-warning);">In Review (V3)</span></p>
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.25rem;">Global Economic </h2>
+              <p style="color: var(--color-text-muted); font-size: 0.9rem;">Status: <span
+                  style="font-weight: 700; color: var(--color-warning);">In Review (V3)</span></p>
             </div>
             <div style="display: flex; gap: 0.5rem;">
               <button class="btn btn-secondary">Add Comment</button>
@@ -247,32 +361,55 @@
             <div class="editor-main">
               <h1 style="text-align: center; margin-bottom: 2rem; font-size: 2.5rem;">The Architecture of Tomorrow</h1>
               <p>Thank you, Chairman. Distinguished guests, colleagues.</p>
-              <p>We stand at a precipice not of failure, but of profound consequence. To retreat into the familiar is to surrender our agency over the next century.</p>
-              <p style="background: rgba(237, 108, 2, 0.1); border-left: 3px solid var(--color-warning); padding-left: 1rem;">True economic resilience is not built by merely buffering standard systems against disruption. It is built by redefining what constitutes a foundational asset. <span style="background: rgba(197, 160, 89, 0.2);">[Note: Strengthen the metaphorical punch here]</span></p>
-              <p>Consider the architecture of our current markets—brittle, hyper-optimized, and dangerously reliant on static variables in a dynamic world. Today, I propose a shift in our collective calculus.</p>
-            </div>
+              <p>We stand at a precipice not of failure, but of profound consequence. To retreat into the familiar is to
+                surrender our agency over the next century.</p>
+              <p
+                style="background: rgba(237, 108, 2, 0.1); border-left: 3px solid var(--color-warning); padding-left: 1rem;">
+                True economic resilience is not built by merely buffering standard systems against disruption. It is
+                built by redefining what constitutes a foundational asset. <span
+                  style="background: rgba(197, 160, 89, 0.2);">[Note: Strengthen the metaphorical punch here]</span></p>
+              <p>Consider the architecture of our current markets—brittle, hyper-optimized, and dangerously reliant on
+                static variables in a dynamic world. Today, I propose a shift in our collective calculus.</p>
 
-            <!-- Sec 2 & 3: Sidebar (Version History & Comments) -->
-            <div class="editor-sidebar" style="display: flex; flex-direction: column; gap: 2rem;">
-              
-              <!-- Sec 2: Version History -->
-              <div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">Version History</h3>
-                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
-                  <li style="padding: 0.75rem; background: var(--color-bg); border: 1px solid var(--color-secondary); border-radius: var(--radius); font-weight: 600;">V3 - Current Draft <br><span style="font-size: 0.8rem; font-weight: 400; color: var(--color-text-muted);">2 hours ago by Editor</span></li>
-                  <li style="padding: 0.75rem; border-bottom: 1px solid var(--color-border); font-size: 0.9rem;"><a href="#">V2 - Initial Revisions</a><br><span style="font-size: 0.8rem; color: var(--color-text-muted);">Yesterday by Editor</span></li>
-                  <li style="padding: 0.75rem; border-bottom: 1px solid var(--color-border); font-size: 0.9rem;"><a href="#">V1 - Skeleton Outline</a><br><span style="font-size: 0.8rem; color: var(--color-text-muted);">3 days ago by Writer</span></li>
-                </ul>
-              </div>
+              <div
+                style="display: flex; flex-direction: column; gap: 2rem; margin-top: 3rem; border-top: 2px solid var(--color-border); padding-top: 2rem;">
 
-              <!-- Sec 3: Comments/Annotations -->
-              <div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">Annotations</h3>
-                <div style="background: var(--color-bg); padding: 1rem; border-radius: var(--radius); border-left: 3px solid var(--color-warning); margin-bottom: 1rem;">
-                  <div style="font-weight: 700; font-size: 0.9rem;">Lead Strategist</div>
-                  <p style="font-size: 0.85rem; margin: 0.5rem 0;">"Let's make sure the delivery on the third paragraph drops in cadence. Pausing before 'dynamic world' will lock the room's attention."</p>
-                  <button style="background: none; border: none; font-size: 0.8rem; color: var(--color-primary); cursor: pointer; font-weight: 600;">Reply</button>
+                <!-- Sec 2: Version History -->
+                <div>
+                  <h3
+                    style="font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                    Version History</h3>
+                  <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li
+                      style="padding: 0.75rem; background: var(--color-bg); border: 1px solid var(--color-secondary); border-radius: var(--radius); font-weight: 600;">
+                      V3 - Current Draft <br><span
+                        style="font-size: 0.8rem; font-weight: 400; color: var(--color-text-muted);">2 hours ago by
+                        Editor</span></li>
+                    <li style="padding: 0.75rem; border-bottom: 1px solid var(--color-border); font-size: 0.9rem;"><a
+                        href="#">V2 - Initial Revisions</a><br><span
+                        style="font-size: 0.8rem; color: var(--color-text-muted);">Yesterday by Editor</span></li>
+                    <li style="padding: 0.75rem; border-bottom: 1px solid var(--color-border); font-size: 0.9rem;"><a
+                        href="#">V1 - Skeleton Outline</a><br><span
+                        style="font-size: 0.8rem; color: var(--color-text-muted);">3 days ago by Writer</span></li>
+                  </ul>
                 </div>
+
+                <!-- Sec 3: Comments/Annotations -->
+                <div>
+                  <h3
+                    style="font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                    Annotations</h3>
+                  <div
+                    style="background: var(--color-bg); padding: 1rem; border-radius: var(--radius); border-left: 3px solid var(--color-warning); margin-bottom: 1rem;">
+                    <div style="font-weight: 700; font-size: 0.9rem;">Lead Strategist</div>
+                    <p style="font-size: 0.85rem; margin: 0.5rem 0;">"Let's make sure the delivery on the third
+                      paragraph
+                      drops in cadence. Pausing before 'dynamic world' will lock the room's attention."</p>
+                    <button
+                      style="background: none; border: none; font-size: 0.8rem; color: var(--color-primary); cursor: pointer; font-weight: 600;">Reply</button>
+                  </div>
+                </div>
+
               </div>
 
             </div>
@@ -285,9 +422,9 @@
         <!-- ============================================== -->
         <div id="page-settings" class="dashboard-page">
           <h2 style="margin-bottom: 1.5rem;">Account Preferences</h2>
-          
+
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            
+
             <!-- Sec 1: Profile -->
             <div class="dash-panel">
               <h3>Profile Settings</h3>
@@ -363,15 +500,7 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/dashboard.js"></script>
-  <script>
-    // Include minimal mobile menu fallback logic here in case main.js load order issues
-    const dToggle = document.querySelector('.dash-sidebar-toggle');
-    const dSide = document.querySelector('.dashboard-sidebar');
-    if(dToggle && dSide) {
-      dToggle.addEventListener('click', function() {
-        dSide.classList.toggle('open');
-      });
-    }
-  </script>
+  <!-- Inline fallback script removed to prevent double-toggling the sidebar -->
 </body>
+
 </html>

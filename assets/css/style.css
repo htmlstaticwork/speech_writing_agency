@@ -801,6 +801,7 @@ img {
 
 .dashboard-sidebar {
   width: 260px;
+  flex-shrink: 0;
   background: var(--color-surface);
   border-right: 1px solid var(--color-border);
   display: flex;
@@ -835,7 +836,7 @@ img {
 
 .sidebar-link:hover,
 .sidebar-link.active {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   background: var(--color-bg);
   border-left: 4px solid var(--color-secondary);
 }
@@ -1177,6 +1178,10 @@ table.dash-table {
   .nav-links,
   .nav-actions {
     display: none;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .hamburger {

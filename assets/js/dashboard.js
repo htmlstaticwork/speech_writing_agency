@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Sidebar toggle for mobile
   const sidebar = document.querySelector('.dashboard-sidebar');
-  const toggleBtn = document.querySelector('.dash-sidebar-toggle');
-  
-  if (sidebar && toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
+  const toggleBtns = document.querySelectorAll('.dash-sidebar-toggle');
+
+  if (sidebar && toggleBtns.length > 0) {
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
     });
   }
 
@@ -16,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      
+
       // Remove active from all links and pages
       navLinks.forEach(l => l.classList.remove('active'));
       pages.forEach(p => p.classList.remove('active'));
