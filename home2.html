@@ -9,6 +9,18 @@
     content="Orito is a premium speechwriting agency serving the highest levels of political and corporate communication. Home 2 variant." />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <style>
+    @media (max-width: 360px) {
+      .hero-btn-group {
+        flex-direction: column !important;
+        padding: 0 1rem;
+      }
+
+      .hero-btn-group .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -23,14 +35,14 @@
         <a href="index.html" class="nav-link">Home</a>
         <a href="home2.html" class="nav-link active">Home 2</a>
         <a href="services.html" class="nav-link">Services</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="contact.html" class="nav-link">Contact</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
       </nav>
 
       <div class="nav-actions">
         <a href="register.html" class="btn btn-secondary">Sign Up</a>
-        <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+        <a href="dashboard.html" class="btn btn-secondary">Dashboard</a>
         <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">RTL</button>
         <button class="icon-btn theme-toggle" aria-label="Toggle Theme">🌙</button>
       </div>
@@ -48,13 +60,13 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="home2.html" class="nav-link active">Home 2</a>
       <a href="services.html" class="nav-link">Services</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
       <a href="blog.html" class="nav-link">Blog</a>
       <a href="contact.html" class="nav-link">Contact</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
     </nav>
     <div class="nav-actions" style="display: flex;">
       <a href="register.html" class="btn btn-secondary">Sign Up</a>
-      <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+      <a href="dashboard.html" class="btn btn-secondary">Dashboard</a>
       <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">RTL</button>
       <button class="icon-btn theme-toggle" aria-label="Toggle Theme">🌙</button>
     </div>
@@ -66,7 +78,7 @@
       <h1 class="hero-anim d1">The Art & Grace of True Persuasion</h1>
       <p class="hero-anim d2">We transform abstract visions into undeniable rhetorical truth. For the moments when
         silence is not an option.</p>
-      <div class="hero-anim d3" style="display: flex; gap: 1rem; justify-content: center;">
+      <div class="hero-anim d3 hero-btn-group" style="display: flex; gap: 1rem; justify-content: center;">
         <a href="services.html" class="btn btn-primary"
           style="background-color: var(--color-secondary); color: #111;">Discover Our Services</a>
         <a href="contact.html" class="btn btn-secondary" style="border-color: #FFF; color: #FFF;">Consult a Partner</a>
