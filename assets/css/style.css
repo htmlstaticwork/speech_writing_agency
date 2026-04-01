@@ -821,7 +821,7 @@ img {
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 1rem;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
 }
 
 .social-login-btn:hover {
@@ -835,10 +835,18 @@ img {
   border: 1px solid #CCC;
 }
 
+.btn-google:hover {
+  background: #F0F0F0;
+}
+
 [data-theme="dark"] .btn-google {
   background: #2A2A2A;
   color: #FFF;
   border-color: #444;
+}
+
+[data-theme="dark"] .btn-google:hover {
+  background: #383838;
 }
 
 .btn-apple {
@@ -847,10 +855,18 @@ img {
   border: 1px solid #000;
 }
 
+.btn-apple:hover {
+  background: #222222;
+}
+
 [data-theme="dark"] .btn-apple {
   background: #FFFFFF;
   color: #000000;
   border: 1px solid #FFF;
+}
+
+[data-theme="dark"] .btn-apple:hover {
+  background: #E0E0E0;
 }
 
 .pwd-input-wrap {

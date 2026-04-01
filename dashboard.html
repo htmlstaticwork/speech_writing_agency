@@ -28,6 +28,14 @@
         align-items: flex-start !important;
         gap: 1rem;
       }
+
+      .editor-header-flex .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.55rem;
+      }
+      .dashboard-header {
+        padding: 0 0.5rem;
+      }
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
@@ -133,7 +141,14 @@
                 style="position: absolute; top: 0; right: 0; background: var(--color-error); width: 10px; height: 10px; border-radius: 50%;"></span>
             </button>
           </div>
-          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">RTL</button>
+          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 3L4 7l4 4"/>
+              <path d="M4 7h16"/>
+              <path d="M16 21l4-4-4-4"/>
+              <path d="M20 17H4"/>
+            </svg>
+          </button>
           <button class="icon-btn theme-toggle" aria-label="Toggle Theme">🌙</button>
 
 
