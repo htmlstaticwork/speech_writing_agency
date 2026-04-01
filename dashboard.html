@@ -21,6 +21,7 @@
         display: flex !important;
       }
     }
+
     @media (max-width: 360px) {
       .editor-header-flex {
         flex-direction: column;
@@ -29,6 +30,7 @@
       }
     }
   </style>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
 </head>
 
 <body>
@@ -87,12 +89,17 @@
 
       <div style="padding: 1.5rem; margin-top: auto; border-top: 1px solid var(--color-border);">
         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
-          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">
+          <div
+            style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">
             SM
           </div>
           <div style="overflow: hidden;">
-            <div style="font-weight: 600; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Senator S. Marshall</div>
-            <div style="color: var(--color-text-muted); font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">s.marshall@senate.gov</div>
+            <div
+              style="font-weight: 600; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+              Senator S. Marshall</div>
+            <div
+              style="color: var(--color-text-muted); font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+              s.marshall@senate.gov</div>
           </div>
         </div>
         <a href="login.html" class="sidebar-link" style="padding: 0.5rem 0;">
@@ -142,12 +149,16 @@
         <div id="page-overview" class="dashboard-page active">
 
           <!-- Sec 1: Welcome Banner -->
-          <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: var(--radius); padding: 2rem; color: #FFF; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; position: relative; box-shadow: var(--shadow-md);">
+          <div
+            style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: var(--radius); padding: 2rem; color: #FFF; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; position: relative; box-shadow: var(--shadow-md);">
             <div style="position: relative; z-index: 2;">
               <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: #FFF;">Welcome back, Senator Marshall!</h2>
-              <p style="opacity: 0.9; margin: 0; font-size: 0.95rem;">You have 2 pending revisions to review today. Let's make every word count.</p>
+              <p style="opacity: 0.9; margin: 0; font-size: 0.95rem;">You have 2 pending revisions to review today.
+                Let's make every word count.</p>
             </div>
-            <div style="font-size: 8rem; position: absolute; right: -1rem; bottom: -3rem; opacity: 0.15; transform: rotate(-15deg); z-index: 1; pointer-events: none;">🎤</div>
+            <div
+              style="font-size: 8rem; position: absolute; right: -1rem; bottom: -3rem; opacity: 0.15; transform: rotate(-15deg); z-index: 1; pointer-events: none;">
+              🎤</div>
           </div>
 
           <!-- Sec 2: KPI Cards -->
@@ -223,7 +234,7 @@
             <h3>Quick Actions</h3>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
               <button class="btn btn-primary">New Speech Request</button>
-              <button class="btn btn-secondary">Review Pending Drafts</button>
+              <button class="btn btn-secondary">Review Pending Draft</button>
               <button class="btn btn-secondary">Contact Partner Team</button>
             </div>
           </div>
@@ -323,14 +334,14 @@
                   </tr>
                   <tr>
                     <td style="font-weight: 600;">University Commencement</td>
-                    <td>Ceremonial</td>
+                    <td>Political</td>
                     <td><span
-                        style="background: var(--color-success); color: #FFF; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Approved</span>
+                        style="background: var(--color-bg); border: 1px solid var(--color-border); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Draft</span>
                     </td>
                     <td>May 20, 2026</td>
                     <td>4 days ago</td>
-                    <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.85rem;">View
-                        Final</button></td>
+                    <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.85rem;">Open
+                        Draft</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -344,7 +355,8 @@
         <!-- ============================================== -->
         <div id="page-editor" class="dashboard-page">
 
-          <div class="editor-header-flex" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <div class="editor-header-flex"
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
             <div>
               <h2 style="font-size: 1.5rem; margin-bottom: 0.25rem;">Global Economic </h2>
               <p style="color: var(--color-text-muted); font-size: 0.9rem;">Status: <span
@@ -406,7 +418,7 @@
                       paragraph
                       drops in cadence. Pausing before 'dynamic world' will lock the room's attention."</p>
                     <button
-                      style="background: none; border: none; font-size: 0.8rem; color: var(--color-primary); cursor: pointer; font-weight: 600;">Reply</button>
+                      style="background: none; border: none; font-size: 0.8rem; color: var(--color-text); cursor: pointer; font-weight: 600;">Reply</button>
                   </div>
                 </div>
 

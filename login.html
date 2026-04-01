@@ -7,6 +7,7 @@
   <title>Orito | Client Portal Login</title>
   <meta name="description" content="Secure client login to Orito speechwriting dashboard." />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
 </head>
 
 <body>
@@ -36,12 +37,11 @@
           </div>
         </div>
 
-        <div
-          style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.9rem;">
-          <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+        <div class="auth-remember-forgot">
+          <label>
             <input type="checkbox" /> Remember Me
           </label>
-          <a href="#" style="color: var(--color-primary); font-weight: 600;">Forgot Password?</a>
+          <a href="#">Forgot Password?</a>
         </div>
 
         <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
@@ -74,9 +74,8 @@
         Continue with Apple
       </button>
 
-      <div class="auth-links" style="justify-content: center; margin-top: 2rem;">
-        <span style="color: var(--color-text-muted);">Don't have an account? <a href="register.html"
-            style="color: var(--color-primary); font-weight: 600;">Sign Up</a></span>
+      <div class="auth-footer-links">
+        <span>Don't have an account? <a href="register.html">Sign Up</a></span>
       </div>
 
     </div>
