@@ -24,11 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- RTL Toggle ---
   const rtlToggles = document.querySelectorAll('.rtl-toggle');
+  const dirIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>`;
+  
   const currentDir = localStorage.getItem('dir') || 'ltr';
   html.setAttribute('dir', currentDir);
   
   rtlToggles.forEach(btn => {
-    btn.innerHTML = currentDir === 'rtl' ? 'LTR' : 'RTL';
+    btn.innerHTML = dirIcon;
     
     btn.addEventListener('click', () => {
       const isRtl = html.getAttribute('dir') === 'rtl';
@@ -37,9 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       html.setAttribute('dir', newDir);
       localStorage.setItem('dir', newDir);
       
-      rtlToggles.forEach(b => {
-        b.innerHTML = newDir === 'rtl' ? 'LTR' : 'RTL';
-      });
+      // Icon stays the same as it represents the toggle action
     });
   });
 

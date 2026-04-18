@@ -132,6 +132,7 @@ img {
   cursor: pointer;
   transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition), color var(--transition);
   border: 2px solid transparent;
+  color: var(--color-text);
 }
 
 .btn:hover {
@@ -632,6 +633,10 @@ img {
   font-family: var(--font-body);
   font-size: 1rem;
   transition: border-color var(--transition);
+}
+
+.form-control::placeholder {
+  color: var(--color-text-muted);
 }
 
 .form-control:focus {
